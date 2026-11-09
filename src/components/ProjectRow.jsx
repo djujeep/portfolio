@@ -5,7 +5,7 @@ import ProjectImage from "./ProjectImage.jsx";
 
 // One line in the ruled project index. The whole row is a link.
 export default function ProjectRow({ project, number }) {
-  const { slug, title, kind, summary, tech } = project;
+  const { slug, title, kind, summary, tech, status } = project;
   const num = String(number).padStart(2, "0");
 
   return (
@@ -19,6 +19,12 @@ export default function ProjectRow({ project, number }) {
         <div className="md:col-span-4">
           <h3 className="display-sm transition-colors group-hover:t-accent">{title}</h3>
           <p className="eyebrow mt-3">{kind}</p>
+                  {status && (
+          <p className="mt-3 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] t-accent">
+            <span className="h-1.5 w-1.5 rounded-full bg-peach" aria-hidden="true" />
+            {status}
+          </p>
+        )}
         </div>
 
         <div className="md:col-span-4">

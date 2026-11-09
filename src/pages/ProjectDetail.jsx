@@ -20,7 +20,7 @@ export default function ProjectDetail() {
 
   if (!project) return <NotFound />;
 
-  const { title, kind, summary, overview, purpose, contribution, tech, live, repo } = project;
+  const { title, kind, summary, overview, purpose, contribution, tech, live, repo, status } = project;
 
   // Previous and next project, wrapping around at both ends.
   const index = projects.findIndex((p) => p.slug === slug);
@@ -50,11 +50,19 @@ export default function ProjectDetail() {
           {summary}
         </p>
 
+      {status && (
+        <p className="enter-in mt-6 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] t-accent">
+          <span className="h-1.5 w-1.5 rounded-full bg-peach" aria-hidden="true" />
+          {status}
+        </p>
+      )}
         <div className="enter-in mt-10 flex flex-wrap gap-4" style={{ "--d": "340ms" }}>
-          <ExternalLink href={live} className="btn btn-solid">
-            View live site
-            <Icon name="external" className="h-4 w-4" />
-          </ExternalLink>
+                    {live && (
+            <ExternalLink href={live} className="btn btn-solid">
+              View live site
+              <Icon name="external" className="h-4 w-4" />
+            </ExternalLink>
+          )}
           {repo && (
             <ExternalLink href={repo} className="btn btn-line">
               <Icon name="github" className="h-4 w-4" />

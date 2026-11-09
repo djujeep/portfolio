@@ -82,6 +82,27 @@ export const projects = [
     featured: true,
     layout: "right",
   },
+ {
+  slug: "crumbs-and-co",
+  title: "Crumbs and Co",
+  kind: "Restaurant website, in progress",
+  status: "In progress",
+  summary:
+    "A website for the restaurant brand Crumbs and Co, currently being built with React and Tailwind CSS.",
+  overview:
+    "A website I am currently building for the restaurant brand Crumbs and Co, using React and Tailwind CSS. The project is still in progress.",
+  purpose:
+    "To build a real brand website for a restaurant, from the layout to the finished pages.",
+  contribution: "Being built independently.",
+  tech: ["React", "Tailwind CSS"],
+  live: "", // add the link when the site is online
+  repo: "",
+  image: "", // add the screenshot when you have it
+  width: 1280,
+  height: 720,
+  featured: true,
+  layout: "left",
+},
   {
     slug: "order-cart",
     title: "Order Cart",
