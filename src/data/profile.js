@@ -8,7 +8,7 @@ export const profile = {
   location: "Nigeria (GMT+1)",
   availability: "Open to remote roles worldwide",
   intro:
-    "I design and build responsive, accessible interfaces, turning designs into fast, reliable front-ends with clean, maintainable code.",
+    "I build responsive, accessible interfaces, turning designs into fast, reliable front-ends with clean, maintainable code.",
 
   email: "eluwapeace45@gmail.com",
   github: "https://github.com/djujeep",

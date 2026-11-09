@@ -56,7 +56,7 @@ export default function About() {
               websites that make brands look credible and work on every device.
             </p>
             <p className="lede">
-              A website is often the first impression a customer has of a business. I design and
+              A website is often the first impression a customer has of a business. I
               build responsive, fast and accessible websites that present a brand clearly, earn
               trust and give visitors a reason to stay, so the brand looks as professional online
               as it is in person.
