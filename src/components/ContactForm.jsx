@@ -105,10 +105,6 @@ export default function ContactForm() {
         <button type="submit" className="btn btn-solid">
           Write the email
         </button>
-        <p className="mt-4 text-sm t-muted">
-          This form opens your email app with your message ready to send. It does not send
-          anything by itself.
-        </p>
         {submitted && (
           <p role="status" className="mt-4 text-sm t-accent">
             Your email app should be open now. If nothing happened, write to {profile.email}{" "}
