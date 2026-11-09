@@ -85,7 +85,7 @@ export const projects = [
  {
   slug: "crumbs-and-co",
   title: "Crumbs and Co",
-  kind: "Restaurant website, in progress",
+  kind: "Restaurant website",
   status: "In progress",
   summary:
     "A website for the restaurant brand Crumbs and Co, currently being built with React and Tailwind CSS.",

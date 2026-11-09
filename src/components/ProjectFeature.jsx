@@ -7,34 +7,46 @@ import ProjectImage from "./ProjectImage.jsx";
 // composition: "wide" stacks a full-width image over the text, "left" and
 // "right" place the image beside it on the left or right.
 export default function ProjectFeature({ project, number }) {
-  const { slug, title, kind, summary, tech, layout } = project;
+  const { slug, title, kind, summary, tech, layout, status } = project;
+const inProgress = Boolean(status); 
   const to = `/projects/${slug}`;
   const num = String(number).padStart(2, "0");
 
-  const picture = (
-    <Link to={to} className="block" aria-label={`${title}, view project`}>
-      <Reveal variant="image" className="bg-mocha">
-        <ProjectImage project={project} loading="lazy" className="h-auto w-full" />
-      </Reveal>
-    </Link>
-  );
+  const image = (
+  <Reveal variant="image" className="bg-mocha">
+    <ProjectImage project={project} loading="lazy" className="h-auto w-full" />
+  </Reveal>
+);
+
+const picture = inProgress ? (
+  <div className="block cursor-default">{image}</div>
+) : (
+  <Link to={to} className="block" aria-label={`${title}, view project`}>
+    {image}
+  </Link>
+);
 
   const text = (
     <Reveal delay={150}>
       <p className="eyebrow">
         {num} <span aria-hidden="true">/</span> {kind}
       </p>
-      <h3 className="display-md mt-4">
-        <Link to={to}>{title}</Link>
-      </h3>
+      <h3 className="display-md mt-4">{inProgress ? title : <Link to={to}>{title}</Link>}</h3>
       <p className="lede mt-5 max-w-md">{summary}</p>
       <TechList items={tech} className="mt-6" />
-      <Link
-        to={to}
-        className="link-line t-accent mt-8 inline-block text-xs font-medium uppercase tracking-[0.22em]"
-      >
-        View project
-      </Link>
+      {inProgress ? (
+  <p className="mt-8 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] t-accent">
+    <span className="h-1.5 w-1.5 rounded-full bg-peach" aria-hidden="true" />
+    In progress
+  </p>
+) : (
+  <Link
+    to={to}
+    className="link-line t-accent mt-8 inline-block text-xs font-medium uppercase tracking-[0.22em]"
+  >
+    View project
+  </Link>
+)}
     </Reveal>
   );
 
