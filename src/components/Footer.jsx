@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ExternalLink from "./ExternalLink.jsx";
+import Icon from "./Icon.jsx";
 import { navLinks, profile, socials } from "../data/profile.js";
 
 export default function Footer() {
@@ -34,26 +35,28 @@ export default function Footer() {
             </div>
             <div>
               <h2 className="eyebrow">Elsewhere</h2>
-              <ul className="mt-5 space-y-3">
-                <li>
-                  <a
-                    href={`mailto:${profile.email}`}
-                    className="t-muted transition-colors hover:t-accent"
-                  >
-                    Email
-                  </a>
-                </li>
-                {socials.map((social) => (
-                  <li key={social.label}>
-                    <ExternalLink
-                      href={social.href}
-                      className="t-muted transition-colors hover:t-accent"
-                    >
-                      {social.label}
-                    </ExternalLink>
-                  </li>
-                ))}
-              </ul>
+              <ul className="mt-5 flex flex-wrap gap-3">
+  <li>
+    <a
+      href={`mailto:${profile.email}`}
+      aria-label="Email"
+      className="b-rule flex h-11 w-11 items-center justify-center border t-muted transition-colors hover:border-peach hover:text-peach"
+    >
+      <Icon name="mail" className="h-5 w-5" />
+    </a>
+  </li>
+  {socials.map((social) => (
+    <li key={social.label}>
+      <ExternalLink
+        href={social.href}
+        aria-label={social.label}
+        className="b-rule flex h-11 w-11 items-center justify-center border t-muted transition-colors hover:border-peach hover:text-peach"
+      >
+        <Icon name={social.icon} className="h-5 w-5" />
+      </ExternalLink>
+    </li>
+  ))}
+</ul>
             </div>
           </nav>
         </div>

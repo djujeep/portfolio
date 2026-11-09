@@ -7,7 +7,7 @@ import portrait from "../assets/images/portrait.webp";
 
 // TODO: type your real experience here, for example "2 years" or "3+ years".
 // While this is empty, the sentence simply leaves it out.
-const YEARS_OF_EXPERIENCE = "";
+const YEARS_OF_EXPERIENCE = "4+";
 
 // The three ideas I work by. Rendered as a list below, not hard-coded in JSX.
 const principles = [
