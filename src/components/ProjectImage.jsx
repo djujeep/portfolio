@@ -1,5 +1,4 @@
-// Shows a project's screenshot. If a project has no image yet, it shows a
-// simple placeholder panel instead, so the layout still looks finished.
+
 export default function ProjectImage({ project, className = "", ...rest }) {
   const { image, title, width, height } = project;
 
@@ -27,7 +26,7 @@ export default function ProjectImage({ project, className = "", ...rest }) {
     >
       <span className="font-display text-2xl text-ivory md:text-3xl">{title}</span>
       <span className="mt-3 text-[0.7rem] font-medium uppercase tracking-[0.3em] text-peach">
-        Screenshot coming soon
+        more to be updated soon
       </span>
     </div>
   );

@@ -10,18 +10,13 @@ import NotFound from "./NotFound.jsx";
 import { projects, getProject } from "../data/projects.js";
 
 export default function ProjectDetail() {
-  // useParams reads :slug from the address, for example /projects/girlyshop
   const { slug } = useParams();
   const project = getProject(slug);
-
-  // Hooks must run on every render, so this sits above the early return.
   usePageTitle(project?.title);
 
   if (!project) return <NotFound />;
 
   const { title, kind, summary, overview, purpose, contribution, tech, live, repo, status } = project;
-
-  // Previous and next project, wrapping around at both ends.
   const index = projects.findIndex((p) => p.slug === slug);
   const previous = projects[(index - 1 + projects.length) % projects.length];
   const next = projects[(index + 1) % projects.length];
@@ -72,7 +67,6 @@ export default function ProjectDetail() {
       </Section>
 
       <Section tone="dark" className="pb-24 md:pb-32">
-        {/* Small screenshots stay at their real width instead of being stretched. */}
         <div className="mx-auto" style={project.width ? { maxWidth: project.width } : undefined}>
           <Reveal variant="image" className="bg-mocha">
             <ProjectImage project={project} className="h-auto w-full" />

@@ -2,10 +2,6 @@ import { Link } from "react-router-dom";
 import Reveal from "./Reveal.jsx";
 import TechList from "./TechList.jsx";
 import ProjectImage from "./ProjectImage.jsx";
-
-// A large, editorial presentation of one project. project.layout decides the
-// composition: "wide" stacks a full-width image over the text, "left" and
-// "right" place the image beside it on the left or right.
 export default function ProjectFeature({ project, number }) {
   const { slug, title, kind, summary, tech, layout, status } = project;
 const inProgress = Boolean(status); 
