@@ -7,7 +7,6 @@ import TechList from "../components/TechList.jsx";
 import ProjectImage from "../components/ProjectImage.jsx";
 import usePageTitle from "../hooks/usePageTitle.js";
 import NotFound from "./NotFound.jsx";
-import { profile } from "../data/profile.js";
 import { projects, getProject } from "../data/projects.js";
 
 export default function ProjectDetail() {
@@ -66,13 +65,9 @@ export default function ProjectDetail() {
           {repo && (
             <ExternalLink href={repo} className="btn btn-line">
               <Icon name="github" className="h-4 w-4" />
-              View source
+              Github Repo
             </ExternalLink>
           )}
-          <ExternalLink href={profile.github} className="btn btn-line">
-            <Icon name="github" className="h-4 w-4" />
-            More on GitHub
-          </ExternalLink>
         </div>
       </Section>
 
